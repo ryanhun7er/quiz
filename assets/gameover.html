@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href = "style.css">
+    <title>Game Over</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div id ="gameover" class = "flex-center flex-column"></div>
+        <form>
+            <h1 id = "finalScore"></h1>
+            <input type="text" name ="username" id = "username" placeholder="Your Name">
+            <br>
+            <button type = "submit" class = "btn" id = "saveScore" onclick="saveHighScore(event)">Submit</button>
+        
+        <a class = "btn" href="/quiz/index.html">Play Again</a>
+        <a class = "btn" href="highscores.html">See High Scores</a>
+    </form>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <p>RHW Designs | Contact: <a href="mailto:ryanhwilkinson@icloud.com">click here</a></p>
+        </div>
+    </footer>     
+    
+    
+<script src ="gameover.js"></script>
+</body>
+</html>

@@ -1,3 +1,5 @@
+//constants for questions
+
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 const questionCounterText = document.getElementById('questionCounter');
@@ -82,7 +84,13 @@ function getNewQuestion () {
 
     //navigate to highscores end game page if all questions have been answered
     if(availableQuestions.length === 0 || questionCounter >= max_questions) {
-        return window.location.assign("highscores.html")
+
+        //add end score to game over screen
+        localStorage.setItem('userScore', score);
+
+        //go to game over screen
+        return window.location.assign("gameover.html")
+        
     }
 
     questionCounter++;
@@ -152,3 +160,7 @@ function displayCorrect (){
 
 
 startGame();
+
+//Log username and highscore
+
+ 
