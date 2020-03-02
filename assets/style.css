@@ -11,58 +11,53 @@ body {
 }
 
 .container {
-    width: 600px;
-    height: 600px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     margin: 0 auto;
-    padding: 10px 50px 50px 50px;
-    border: 10px linear-gradient(270deg, rgb(67, 169, 252)0%, rgb(169, 250, 173)100%);
-    text-align: center;
-
-}
-
-#quiz {
     font-family: 'Spartan', ;
-
 }
 
-h1 {
-    font-family: 'Spartan', ;
-    font-size: 50px;
-    
+.flex-column {
+    display: flex;
+    flex-direction: column;
 }
 
-.buttons {
-    margin-top: 200px;
-   
+.flex.center {
+    justify-content: center;
 }
 
-#btn0, #btn1, #btn2, #btn3 {
-    background-color: seashell;
-    width: 200px;
-    height: 30px;
-    font-size: 18px;
-    color: black;
-    border: 1px solid blue;
-   
-    
-}
-
-#btn0:hover, #btn1:hover, #btn2:hover, #btn3:hover {
-    cursor: pointer;
-    background-color: rgb(33, 37, 223);
-}
-
-#progress {
-    font-family: 'Spartan',;
-    font-size: 20px;
-}
-
-#correct {
-    font-family: 'Spartan',;
+.text-center {
     text-align: center;
-    font-size: 20px;
+}
+
+.hidden {
     display: none;
 }
 
+/* Buttons */
 
+.btn {
+    font-size: 16px;
+    padding: 1rem 0;
+    width: 20rem;
+    text-align: center;
+    border: 1px solid blue;
+    margin-bottom: 1rem;
+    background-color: cornsilk;
+}
 
+.btn:hover {
+    cursor: pointer;
+    background-color: #2491b3;
+    box-shadow: rgb(216, 243, 216);
+}
+
+.btn[:disabled]:hover {
+    cursor: not-allowed;
+    box-shadow: none;
+    
+}
