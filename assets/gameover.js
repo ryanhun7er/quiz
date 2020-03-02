@@ -5,4 +5,33 @@ const saveScore = document.getElementById("saveScore");
 const finalScore = document.getElementById("finalScore");
 const userScore = localStorage.getItem("userScore");
 
+//constants for high scores
+
+const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+
+const maxScores = 10;
+
+
+function saveHighScore (e) {
+    e.preventDefault();
+
+    const score = {
+        score: userScore,
+        player: username.value 
+    
+    };
+
+    highScores.push(score);
+
+    highScores.sort ((x, y) => {
+        return y.score - x.score;
+    });
+
+    highScores.splice(10)
+
+    console.log(highScores);
+    
+}
+
+
 finalScore.innerText = userScore;
