@@ -38,6 +38,10 @@ body {
     display: none;
 }
 
+h1, h2, h3, h4 {
+    text-align: center;
+}
+
 /* Buttons */
 
 .btn {
@@ -61,3 +65,4 @@ body {
     box-shadow: none;
     
 }
+

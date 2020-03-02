@@ -1,0 +1,38 @@
+body {
+    background: linear-gradient(270deg, rgb(169, 250, 173) 0%, rgb(67, 169, 252) 100%);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+}
+
+h2 {
+    text-align: center;
+    font-size: 40px;
+}
+
+.choice-container {
+    display: flex;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    border: 1px solid blue;
+    background-color: ivory;
+}
+
+.choice-container:hover {
+    cursor: pointer;
+    background-color: #2491b3;
+    box-shadow: rgb(216, 243, 216);
+}
+
+.choice-prefix {
+    background-color: #2491b3;
+    color: rgb(252, 248, 248);
+    padding: 1.5rem 2.5rem;
+}
+
+.choice-text {
+    padding: 1.5rem;
+}
