@@ -1,5 +1,7 @@
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
+const questionCounterText = document.getElementById('questionCounter');
+const scoreText = document.getElementById('score');
 
 //variables for quiz
 
@@ -63,14 +65,14 @@ let questions = [
 //constants
 
 const correct_bonus = 10;
-const max_questions = 6;
+const max_questions = 5;
 
 //start game
 function startGame() {
     questionCounter = 0;
     score = 0;
     availableQuestions = [...questions]
-    console.log(availableQuestions);
+    
     getNewQuestion();
 };
 
@@ -78,11 +80,17 @@ function startGame() {
 
 function getNewQuestion () {
 
+    //navigate to highscores end game page if all questions have been answered
     if(availableQuestions.length === 0 || questionCounter >= max_questions) {
-        return window.location.assign("/highscores.html")
+        return window.location.assign("highscores.html")
     }
 
     questionCounter++;
+
+    //update question count
+    questionCounterText.innerText = questionCounter + "/" + max_questions;
+
+    //randomize questions
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
     question.innerText = currentQuestion.question;
@@ -92,8 +100,9 @@ function getNewQuestion () {
         choice.innerText = currentQuestion["choice" + number];
     });
 
+    //don't allow questions to repeat
     availableQuestions.splice(questionIndex, 1);
-    console.log(availableQuestions);
+    
 
     acceptingAnswers = true;
 };
@@ -106,13 +115,40 @@ choices.forEach(choice => {
 
     const selectedChoice = e.target;
     const selectedAnswer = selectedChoice.dataset["number"];
-    console.log(selectedAnswer);
+
+    console.log(selectedAnswer == currentQuestion.answer);
+//need to figure out how to say answer is correct
+        //if (selectedAnswer == currentQuestion.answer) {
+        //    getElementsByClassName("choice-text").innerHTML = 'correct';
+       // }
+
+      //  else {
+      //      getElementsByClassName("choice-text").innerHTML = 'incorrect';
+      //  }
+    
+    
+    const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+
+    if (classToApply === 'correct') {
+        incrementScore(correct_bonus);
+    }
+
+    //selectedChoice.parentElement.classlist.add(classToApply);
 
     getNewQuestion();
 
-
-    });
+  });
 });
+
+function incrementScore(num) {
+    score += num;
+    scoreText.innerText = score;
+
+};
+
+function displayCorrect (){
+    document.getElementById("correct").style.display = "block"
+}
 
 
 startGame();
