@@ -10,9 +10,10 @@
     
     <div class="container">
         <div id ="gameover" class = "flex-center flex-column"></div>
-        <form>
+        <form id= "scoreForm">
+            <h1>Your final score:</h1>
             <h1 id = "finalScore"></h1>
-            <input type="text" name ="username" id = "username" placeholder="Your Name">
+            <input type="text" name ="username" id = "username" placeholder="Type name here to add to the leaderboard">
             <br>
             <button type = "submit" class = "btn" id = "saveScore" onclick="saveHighScore(event)">Submit</button>
         

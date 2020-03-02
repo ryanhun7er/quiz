@@ -66,7 +66,7 @@ let questions = [
 
 //constants
 
-const correct_bonus = 10;
+const correctAdd = 10;
 const max_questions = 5;
 
 //start game
@@ -138,7 +138,7 @@ choices.forEach(choice => {
     const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
 
     if (classToApply === 'correct') {
-        incrementScore(correct_bonus);
+        incrementScore(correctAdd);
     }
 
     //selectedChoice.parentElement.classlist.add(classToApply);
