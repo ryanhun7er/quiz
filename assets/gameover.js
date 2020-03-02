@@ -29,6 +29,8 @@ function saveHighScore (e) {
 
     highScores.splice(10)
 
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+
     console.log(highScores);
     
 }
