@@ -4,6 +4,7 @@ const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 const questionCounterText = document.getElementById('questionCounter');
 const scoreText = document.getElementById('score');
+const timeText = document.getElementById('timer');
 
 //variables for quiz
 
@@ -68,11 +69,14 @@ let questions = [
 
 const correctAdd = 10;
 const max_questions = 5;
+var addSeconds = 10;
+var subSeconds = -10;
 
 //start game
 function startGame() {
     questionCounter = 0;
     score = 0;
+    time = 60;
     availableQuestions = [...questions]
     
     getNewQuestion();
@@ -139,6 +143,11 @@ choices.forEach(choice => {
 
     if (classToApply === 'correct') {
         incrementScore(correctAdd);
+        adjTimer(addSeconds);
+    }
+
+    else {
+        adjTimer(subSeconds);
     }
 
     //selectedChoice.parentElement.classlist.add(classToApply);
@@ -153,6 +162,13 @@ function incrementScore(num) {
     scoreText.innerText = score;
 
 };
+
+//function to add or subtract time
+
+function adjTimer (sec) {
+    time += sec;
+    timeText.innerText = time;
+}
 
 function displayCorrect (){
     document.getElementById("correct").style.display = "block"

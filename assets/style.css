@@ -92,3 +92,10 @@ footer {
 #username {
     font-size: 0.7rem;
 }
+
+#highScoresList {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 2rem;
+    
+}

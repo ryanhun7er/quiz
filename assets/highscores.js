@@ -16,7 +16,7 @@ for (var i =0; i < highScores.length; i++) {
     var pn = highScores[i].player;
 
     var li = document.createElement("li");
-    li.textContent = pn + "~" + "     " + "     " + hs;
+    li.textContent = pn + ":" + " " + " " + hs;
     highScoresList.appendChild(li);
     
     }
