@@ -145,13 +145,10 @@ choices.forEach(choice => {
 
     if (classToApply === 'correct') {
         incrementScore(correctAdd);
-        adjTimer(addSeconds);
+        
     }
 
-    else {
-        adjTimer(subSeconds);
-    }
-
+  
 //run new Question function    
     getNewQuestion();
 
@@ -165,6 +162,8 @@ function incrementScore(num) {
 
 };
 
+
+
 //function for timer
 
 function adjTimer () {
@@ -172,6 +171,7 @@ function adjTimer () {
     if(time <= 0){
         return window.location.assign("timeup.html")
     }
+
     else {
         time = time -1;
         seconds = parseInt(time%60);

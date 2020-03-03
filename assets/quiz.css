@@ -55,3 +55,37 @@ h2 {
 #correct {
     display: none;
 }
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25rem;
+    height: 25rem;
+}
+
+.btn {
+    display: block;
+    width: 10rem;
+    
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: 1px solid blue;
+    margin-bottom: 1rem;
+    background-color: rgb(248, 252, 248);
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: #2491b3;
+    box-shadow: rgb(216, 243, 216);
+}
+
+h1 {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+}

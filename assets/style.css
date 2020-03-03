@@ -61,12 +61,6 @@ h1, h2, h3, h4 {
     box-shadow: rgb(216, 243, 216);
 }
 
-.btn[:disabled]:hover {
-    cursor: not-allowed;
-    box-shadow: none;
-    
-}
-
 
 /* Form */
 
@@ -87,6 +81,7 @@ input {
 
 footer {
     text-align: center;
+    position: sticky;
 }
 
 #username {
@@ -99,3 +94,5 @@ footer {
     margin-bottom: 2rem;
     
 }
+
+
