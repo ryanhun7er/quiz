@@ -67,17 +67,19 @@ let questions = [
 
 //constants
 
-const correctAdd = 10;
+const correctAdd = 100;
 const max_questions = 5;
 var addSeconds = 10;
 var subSeconds = -10;
+var time = 60;
+var seconds = parseInt(time%60)
 
 //start game
 function startGame() {
     questionCounter = 0;
     score = 0;
-    time = 60;
     availableQuestions = [...questions]
+    
     
     getNewQuestion();
 };
@@ -150,32 +152,41 @@ choices.forEach(choice => {
         adjTimer(subSeconds);
     }
 
-    //selectedChoice.parentElement.classlist.add(classToApply);
-
+//run new Question function    
     getNewQuestion();
 
   });
 });
 
+//function to increment score
 function incrementScore(num) {
     score += num;
     scoreText.innerText = score;
 
 };
 
-//function to add or subtract time
+//function for timer
 
-function adjTimer (sec) {
-    time += sec;
+function adjTimer () {
     timeText.innerText = time;
+    if(time <= 0){
+        return window.location.assign("timeup.html")
+    }
+    else {
+        time = time -1;
+        seconds = parseInt(time%60);
+        setTimeout("adjTimer()", 1000);
+
+    }
 }
 
 function displayCorrect (){
     document.getElementById("correct").style.display = "block"
 }
 
-
+setTimeout("adjTimer()",1000)
 startGame();
+
 
 //Log username and highscore
 
