@@ -9,8 +9,6 @@ const userScore = localStorage.getItem("userScore");
 
 const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
-const maxScores = 10;
-
 
 function saveHighScore (e) {
     e.preventDefault();

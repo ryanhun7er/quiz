@@ -9,7 +9,7 @@ const timeText = document.getElementById('timer');
 //variables for quiz
 
 let currentQuestion = [];
-let acceptingAnswers = true;
+let allowAnswer = true;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
@@ -68,7 +68,7 @@ let questions = [
 //constants
 
 const correctAdd = 100;
-const max_questions = 5;
+const questionCount = 5;
 var addSeconds = 10;
 var subSeconds = -10;
 var time = 60;
@@ -89,9 +89,9 @@ function startGame() {
 function getNewQuestion () {
 
     //navigate to highscores end game page if all questions have been answered
-    if(availableQuestions.length === 0 || questionCounter >= max_questions) {
+    if(availableQuestions.length === 0 || questionCounter >= questionCount) {
 
-        //add end score to game over screen
+        //add end score to localStorage
         localStorage.setItem('userScore', score);
 
         //go to game over screen
@@ -102,7 +102,7 @@ function getNewQuestion () {
     questionCounter++;
 
     //update question count
-    questionCounterText.innerText = questionCounter + "/" + max_questions;
+    questionCounterText.innerText = questionCounter + "/" + questionCount;
 
     //randomize questions
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
@@ -118,14 +118,14 @@ function getNewQuestion () {
     availableQuestions.splice(questionIndex, 1);
     
 
-    acceptingAnswers = true;
+    allowAnswer = true;
 };
 
 choices.forEach(choice => {
     choice.addEventListener("click", e => {
-        if (!acceptingAnswers) return;
+        if (!allowAnswer) return;
 
-        acceptingAnswers = false;
+        allowAnswer = false;
 
     const selectedChoice = e.target;
     const selectedAnswer = selectedChoice.dataset["number"];
@@ -145,7 +145,12 @@ choices.forEach(choice => {
 
     if (classToApply === 'correct') {
         incrementScore(correctAdd);
+        time += 10;
         
+    }
+
+    else {
+        time -= 10;
     }
 
   
@@ -180,14 +185,12 @@ function adjTimer () {
     }
 }
 
-function displayCorrect (){
-    document.getElementById("correct").style.display = "block"
-}
+
 
 setTimeout("adjTimer()",1000)
 startGame();
 
 
-//Log username and highscore
+
 
  

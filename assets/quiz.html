@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/quiz/index.html">
     <link rel="stylesheet" href="quiz.css">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
     <title>Quiz</title>
 </head>
 <body>
@@ -15,7 +17,7 @@
             <div id="hud">
                 <div id="hud-item">
                     <p class = "hud-prefix">
-                        Question:
+                        ~ Question |
                     </p>
                     <h1 class = "hud-main-text" id = "questionCounter">
                         1/5
@@ -23,7 +25,7 @@
                 </div>
                 <div id="hud-item">
                     <p class = "hud-prefix">
-                        Timer:
+                        | Timer |
                     </p>
                     <h1 class = "hud-main-text" id = "timer">
                         60
@@ -31,14 +33,20 @@
                 </div>
                 <div id="hud-item">
                     <p class = "hud-prefix">
-                        Score:
+                        | Score ~
                     </p>
                     <h1 class = "hud-main-text" id = "score">
                         0
                     </h1>
                 </div>
             </div>
-            <h2 id="question">What is the answer to the question?</h2>
+            <h2 id="question">What is the question?</h2>
+
+            <!-- correct or incorrect alert -->
+            <div class="correctAnswer">
+                <p class="cA" id = "cA">Correct!</p>
+                <p class="iA" id = "iA">Incorrect!</p>
+            </div>
             <!-- Choice buckets -->
             <div class="choice-container">
                 <p class="choice-prefix">1</p>
@@ -55,7 +63,7 @@
             <div class="choice-container">
                 <p class="choice-prefix">4</p>
                 <p class="choice-text" data-number="4">Choice 4</p>
-            </div>       
+            </div>  
         </div>
     </div>
 
