@@ -1,7 +1,7 @@
-@viewport {
+/*@viewport {
     width: device-width ;
     zoom: 1.0 ;
-  }
+  }*/
 
 body {
     background: linear-gradient(270deg, rgb(169, 250, 173) 0%, rgb(67, 169, 252) 100%);

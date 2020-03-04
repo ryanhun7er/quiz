@@ -156,7 +156,7 @@ choices.forEach(choice => {
 
   
 //run new Question function    
-setTimeout(getNewQuestion(),5000);    
+getNewQuestion();    
 
 //getNewQuestion();
     
