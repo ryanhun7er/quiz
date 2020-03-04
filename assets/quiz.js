@@ -146,11 +146,13 @@ choices.forEach(choice => {
     if (classToApply === 'correct') {
         incrementScore(correctAdd);
         time += 10;
+        //getElementById("#cA").style.display = "block";
         
     }
 
     else {
         time -= 10;
+        //getElementById("#iA").style.display = "block";
     }
 
   
