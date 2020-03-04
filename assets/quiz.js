@@ -1,7 +1,7 @@
 //constants for questions
 
 const question = document.getElementById("question");
-const choices = Array.from(document.getElementsByClassName("choice-text"));
+const choices = Array.from(document.getElementsByClassName("choiceText"));
 const questionCounterText = document.getElementById('questionCounter');
 const scoreText = document.getElementById('score');
 const timeText = document.getElementById('timer');
@@ -37,7 +37,7 @@ let questions = [
     },
 
     {
-        question: "My fianc\xE9 and I love to travel. How did we meet?",
+        question: "My fianc\xE9 and I love to travel and see the world. How did we meet?",
         choice1: "Dating App",
         choice2: "On an airplane",
         choice3: "At a bar",
@@ -158,9 +158,6 @@ choices.forEach(choice => {
 //run new Question function    
 getNewQuestion();    
 
-//getNewQuestion();
-    
-
 
   });
 });
@@ -169,19 +166,19 @@ getNewQuestion();
 function incrementScore(num) {
     score += num;
     scoreText.innerText = score;
-
-
-//functions for displaying correct or incorrect
 };
 
+//functions for displaying correct or incorrect
+
 function displayCorrect() {
-    document.querySelector('.cA').style.display = "block";
+    document.querySelector('.cA').style.display = "inline";
 };
 
 function displayIncorrect() {
-    document.querySelector('.iA').style.display = "block";
+    document.querySelector('.iA').style.display = "inline";
 }
 
+//functions to clear display
 function displayCorrect1() {
     document.querySelector('.cA').style.display = "none";
 };
