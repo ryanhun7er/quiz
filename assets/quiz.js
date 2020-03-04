@@ -19,11 +19,11 @@ let availableQuestions = [];
 let questions = [
 
     {
-        question: "In 2019, I ran and competed in marathons, Ironmans, cycling, and Spartan races. How many races did I complete?",
+        question: "In 2019, how many races (running, biking or swimming) did I compete in?",
         choice1: "2",
         choice2: "10",
-        choice3: "17",
-        choice4: "5",
+        choice3: "22",
+        choice4: "7",
         answer: 2
     },
 
@@ -73,6 +73,8 @@ var addSeconds = 10;
 var subSeconds = -10;
 var time = 60;
 var seconds = parseInt(time%60)
+var correctAnswer = document.getElementById("#cA");
+var incorrectAnswer = document.getElementById("#iA");
 
 //start game
 function startGame() {
@@ -88,6 +90,8 @@ function startGame() {
 
 function getNewQuestion () {
 
+    
+    
     //navigate to highscores end game page if all questions have been answered
     if(availableQuestions.length === 0 || questionCounter >= questionCount) {
 
@@ -131,14 +135,7 @@ choices.forEach(choice => {
     const selectedAnswer = selectedChoice.dataset["number"];
 
     console.log(selectedAnswer == currentQuestion.answer);
-//need to figure out how to say answer is correct
-        //if (selectedAnswer == currentQuestion.answer) {
-        //    getElementsByClassName("choice-text").innerHTML = 'correct';
-       // }
 
-      //  else {
-      //      getElementsByClassName("choice-text").innerHTML = 'incorrect';
-      //  }
     
     
     const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
@@ -146,18 +143,24 @@ choices.forEach(choice => {
     if (classToApply === 'correct') {
         incrementScore(correctAdd);
         time += 10;
-        //getElementById("#cA").style.display = "block";
+        displayCorrect();
+        displayIncorrect1();
         
     }
 
     else {
         time -= 10;
-        //getElementById("#iA").style.display = "block";
+        displayIncorrect();
+        displayCorrect1();
     }
 
   
 //run new Question function    
-    getNewQuestion();
+setTimeout(getNewQuestion(),5000);    
+
+//getNewQuestion();
+    
+
 
   });
 });
@@ -167,7 +170,26 @@ function incrementScore(num) {
     score += num;
     scoreText.innerText = score;
 
+
+//functions for displaying correct or incorrect
 };
+
+function displayCorrect() {
+    document.querySelector('.cA').style.display = "block";
+};
+
+function displayIncorrect() {
+    document.querySelector('.iA').style.display = "block";
+}
+
+function displayCorrect1() {
+    document.querySelector('.cA').style.display = "none";
+};
+
+function displayIncorrect1() {
+    document.querySelector('.iA').style.display = "none";
+}
+
 
 
 
