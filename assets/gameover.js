@@ -5,6 +5,14 @@ const saveScore = document.getElementById("saveScore");
 const finalScore = document.getElementById("finalScore");
 const userScore = localStorage.getItem("userScore");
 
+//variable for navigating to highscores screen after user name input
+
+var button = document.getElementById("saveScore");
+
+button.addEventListener('click', function() {
+    window.location = "highscores.html"
+})
+
 //constants for high scores
 
 const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
@@ -29,7 +37,7 @@ function saveHighScore (e) {
 
     localStorage.setItem("highScores", JSON.stringify(highScores));
 
-
+    
     console.log(highScores);
     
 }
