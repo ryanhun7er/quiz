@@ -86,7 +86,10 @@ input {
 
 footer {
     text-align: center;
-    position: sticky;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    
 }
 
 #username {
@@ -97,8 +100,55 @@ footer {
     list-style-type: none;
     padding-left: 0;
     margin-bottom: 2rem;
+    font-family: 'Spartan', ;
+    font-size: 1.5rem;
     
 }
+
+/* ticker style*/
+
+  @keyframes ticker {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
+  }
+  .tcontainer {
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 50px;
+            
+  }
+
+  .ticker-wrap {
+    width: 100%;
+    padding-left: 100%;
+    
+  }
+
+  .ticker-move {
+    display: inline-block;
+    white-space: nowrap;
+    padding-right: 100%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-name: ticker;
+    animation-duration: 15s;
+  }
+
+  .ticker-move:hover {
+    animation-play-state: paused;
+  }
+
+  #ticker {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px 2rem;
+    font-family: 'Spartan', ;
+    font-size: 2rem;
+    background: -webkit-linear-gradient(270deg, rgb(67, 169, 252) 80%, rgb(169, 250, 173) 20%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+  }
 
 
 
